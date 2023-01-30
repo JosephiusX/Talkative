@@ -12,23 +12,23 @@ then lets have a components files that contains the the parts of the pages.
           - TopicsPage.jsx     : import from components
           - PhrasesPage.jsx    : import from components
           - ErrorPage.jsx      : error page
-          - index.jsx          : export Pages for AppRouter
+          - index.js           : export Pages for AppRouter
 
         - /components
           - Topics.jsx         : display topics list
           - TopicsForm.jsx     : display topics form
           - Phrases.jsx        : display phrases relative to given topic
           - PhrasesForm.jsx    : display phrases form
-          - index.jsx          : exports all for pages
+          - index.js           : exports all for pages
 
         - /router
           - AppRouter.jsx      : import views, create browser router, export to main.jsx
           - Navigation.jsx     : Home button for Phrases pages
-          - index.jsx          : exports AppRouter.jsx for main.jsx and Navigation.jsx for PhrasesPage.jsx
+          - index.js           : exports AppRouter.jsx for main.jsx and Navigation.jsx for PhrasesPage.jsx
         
         - /store
           - topicsSlice.jsx    : topics store logic
-          - PhrasesSlice.jsx   : phrases store logic
+          - phrasesSlice.jsx   : phrases store logic
           - useLocalStore.jsx  : hooks for saveing to localStorage
           - index.jsx          : Slice reducers, export store for main.jsx
 
