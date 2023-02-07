@@ -4,9 +4,6 @@ import {
 } from "react-router-dom";
 
 import {
-  TopicsIndex,
-  PhrasesIndex,
-  RootPage,
   PhrasesPage,
   TopicsPage,
   ErrorPage,
@@ -16,44 +13,36 @@ import {
   DeletePhrase 
 } from '../views';
 
-const AppRouter = createBrowserRouter([
+export const AppRouter = createBrowserRouter([
   {
     path: "/",
-    element: <RootPage />,
-    loader: rootLoader,
-    action: rootAction,
+    exact: true,
+    element: <TopicsPage />,
     errorElement: <ErrorPage />,
-    children: [
-        {
-        errorElement: <ErrorPage />,
-        children: [
-          { index: true, element: <TopicsIndex /> },
-          {
-            path: "topics/:topicId",
-            element: <TopicsPage />,
-          },
-          {
-            path: "topics/:topicId/edit",
-            element: <EditTopic />,
-          },
-          {
-            path: "topics/:topicId/destory",
-            element: <DeleteTopic />,
-          },
-          {
-            path: "topics/:topicId/phrases",
-            element: <PhrasesPage />,
-          },
-          {
-            path: "topics/:topicId/:phrasesId/edit",
-            element: <EditPhrases />,
-          },
-          {
-            path: "topics/:topicId/:phrasesId/destory",
-            element: <DeletePhrase />,
-          },
-        ],
-      },
-    ],
+  },
+  {
+    path: "topics/:topicId/edit",
+    element: <EditTopic />,
+    errorElement: <ErrorPage />
+  },
+  {
+    path: "topics/:topicId/destory",
+    element: <DeleteTopic />,
+    errorElement: <ErrorPage />
+  },
+  {
+    path: "topics/:topicId/phrases",
+    element: <PhrasesPage />,
+    errorElement: <ErrorPage />
+  },
+  {
+    path: "topics/:topicId/:phrasesId/edit",
+    element: <EditPhrases />,
+    errorElement: <ErrorPage />
+  },
+  {
+    path: "topics/:topicId/:phrasesId/destory",
+    element: <DeletePhrase />,
+    errorElement: <ErrorPage />
   },
 ]);
