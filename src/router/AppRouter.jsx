@@ -7,10 +7,6 @@ import {
   PhrasesPage,
   TopicsPage,
   ErrorPage,
-  EditTopic,
-  DeleteTopic,
-  EditPhrases,
-  DeletePhrase 
 } from '../views';
 
 export const AppRouter = createBrowserRouter([
