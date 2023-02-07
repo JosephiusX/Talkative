@@ -3,7 +3,18 @@ import {
   RouterProvider
 } from "react-router-dom";
 
-import {topicsIndex,RootPage, PhrasesPage, TopicsPage, ErrorPage } from '../views'
+import {
+  TopicsIndex,
+  PhrasesIndex,
+  RootPage,
+  PhrasesPage,
+  TopicsPage,
+  ErrorPage,
+  EditTopic,
+  DeleteTopic,
+  EditPhrases,
+  DeletePhrase 
+} from '../views';
 
 const AppRouter = createBrowserRouter([
   {
@@ -20,45 +31,29 @@ const AppRouter = createBrowserRouter([
           {
             path: "topics/:topicId",
             element: <TopicsPage />,
-            loader: topicsLoader,
-            action: topicsAction,
-            children: [
-                {
-                errorElement: <ErrorPage />,
-                children: [
-                    { index: true, element: <PhrasesIndex /> },
-                    {
-                      path: "phrases/:topicId",
-                      element: <PhrasesPage />,
-                      loader: phrasesLoader,
-                      action: phrasesAction,
-                    },
-                    {
-                      path: "phrases/:topicId/edit",
-                      element: <EditTopic />,
-                      loader: topicPhraseLoader,
-                      action: editTopic,
-                    },
-                    {
-                      path: "phrases/:topicId/destory",
-                      action: destoryPhrase,
-                      errorElement: <div>error destorying phrase</div>
-                    },
-                    {
-                      path: "topics/:topicId/edit",
-                      element: <EditTopic />,
-                      loader: topicsLoader,
-                      action: editTopic,
-                    },
-                    {
-                      path: "topics/:topicId/destory",
-                      action: destoryTopic,
-                      errorElement: <div>error destorying topic.</div>
-                    },
-                  ],
-                },
-              ],
+          },
+          {
+            path: "topics/:topicId/edit",
+            element: <EditTopic />,
+          },
+          {
+            path: "topics/:topicId/destory",
+            element: <DeleteTopic />,
+          },
+          {
+            path: "topics/:topicId/phrases",
+            element: <PhrasesPage />,
+          },
+          {
+            path: "topics/:topicId/:phrasesId/edit",
+            element: <EditPhrases />,
+          },
+          {
+            path: "topics/:topicId/:phrasesId/destory",
+            element: <DeletePhrase />,
           },
         ],
       },
-    ])
+    ],
+  },
+]);
