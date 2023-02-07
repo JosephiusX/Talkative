@@ -11,6 +11,7 @@ then lets have a components files that contains the the parts of the pages.
         - /views
           - TopicsPage.jsx     : import from components
           - PhrasesPage.jsx    : import from components
+          - index.jsx          : defauld when no info has been entered
           - ErrorPage.jsx      : error page
 
         - /components

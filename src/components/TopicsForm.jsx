@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-// import { addTopic } from '../../store/topicsSlice';
+import { addTopic } from '../store/topicsSlice';
 
 export const TopicsForm = () => {
   const [topic, setTopic] = useState('');

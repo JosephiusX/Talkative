@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-// import { addPhrase } from '../../store/phrasesSlice';
+import { addPhrase } from '../store/phrasesSlice';
 
 export const PhrasesForm = ({ match }) => {
   const [phrase, setPhrase] = useState('');

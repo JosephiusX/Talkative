@@ -14,14 +14,6 @@ export const Topics = () => {
         </li>
       ))}
     </ul>
-    <div
-        id="detail"
-        className={
-          navigation.state === "loading" ? "loading" : ""
-        }
-      >
-        <Outlet />
-      </div>
     </>
   );
 };
