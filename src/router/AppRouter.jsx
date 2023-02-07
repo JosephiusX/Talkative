@@ -11,10 +11,15 @@ import {
 
 export const AppRouter = createBrowserRouter([
   {
-    path: "/",
+    path: "/topics",
     exact: true,
     element: <TopicsPage />,
     errorElement: <ErrorPage />,
+  },
+  {
+    path: "topics/create",
+    element: <CreateTopic />,
+    errorElement: <ErrorPage />
   },
   {
     path: "topics/:topicId/edit",
@@ -29,6 +34,11 @@ export const AppRouter = createBrowserRouter([
   {
     path: "topics/:topicId/phrases",
     element: <PhrasesPage />,
+    errorElement: <ErrorPage />
+  },
+  {
+    path: "topics/:topicId/phrases/create",
+    element: <CreatePhrases />,
     errorElement: <ErrorPage />
   },
   {
